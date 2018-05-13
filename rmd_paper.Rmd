@@ -1,0 +1,84 @@
+---
+title: "R Markdown Paper Shell"
+author: |
+  | Apoorva Lal
+  | Stanford University
+date: Date
+abstract: 'This paper does amazing things'
+geometry: "margin=1in"
+output: pdf_document
+fontsize: 12pt
+fontfamily: mathpazo
+indent: true
+# toc: true
+numbersections: true
+documentclass: article
+bibliography: "C:/Users/alal/Dropbox (Personal)/MyLibrary.bib"
+csl: "C:/Users/alal/.csl/econometrica.csl"
+header-includes:
+    - \usepackage{fancyhdr}
+    - \usepackage{booktabs}
+    - \pagestyle{fancy}
+    - \rhead{Title}
+    - \lhead[CO,LE]{Apoorva Lal}
+---
+
+```{r, echo=FALSE, include=FALSE}
+####################################################
+rm(list=ls())
+if (require('LalRUtils')==F) {
+    library(devtools)
+    devtools::install_github("apoorvalal/LalRUtils")
+}
+load_or_install(c('tidyverse','magrittr','Hmisc','knitr','stargazer'))
+sessionInfo()
+
+opts_chunk$set(echo=F, autodep=TRUE, cache.comments=FALSE,
+               message=FALSE, warning=FALSE)
+
+```
+
+render in R using:
+
+```r
+library(rmarkdown)
+rmarkdown::render('rmd_paper.Rmd','pdf_document')
+```
+
+
+# Introduction
+
+R inline output include
+
+Citation example  @Deatonanalysishouseholdsurveys1997
+
+# Model
+
+$$
+max_{x} \int_{-\infty}^{\infty} \beta^t U(c_t) dt
+$$
+
+# Data
+
+```{r}
+#%%
+ggplot(mpg, aes(displ, hwy, colour = class)) +
+  geom_point()
+#%%
+```
+
+# Results
+
+Run regression in R; get stargazer to knit latex table
+
+```{r}
+lm1 = lm(hwy ~ cyl + factor(class), data=mpg)
+```
+
+```{r, results='asis'}
+stargazer(lm1, header=F, type='latex')
+```
+
+\newpage
+
+# Bibliography
