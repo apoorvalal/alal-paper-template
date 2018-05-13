@@ -26,11 +26,22 @@ header-includes:
 
 # Overview
 
-Setup problem
+Introduce paper
 
+# Pandoc incantations
 
+configure sublime build systems for these so that `ctrl+b` builds the
+file
 
-# Stuff
+## Markdown to pdf
+
+`pandoc -o $file_base_name.pdf -s $paper.md --filter=pandoc-citeproc`
+
+## Markdown to tex (to fiddle with tex settings / packages)
+
+`pandoc -o $file_base_name.tex -s $paper.md --filter=pandoc-citeproc`
+
+# Pandoc Markdown incantations
 
 ## Citations
 
@@ -42,7 +53,8 @@ syntax`.
 Here is a footnote reference,[^1] and[^2] another.[^longnote]. Inline
 footnotes are easier to handle^[like so].
 
-[^1]: Footnotes are the mind killer. Footnotes are the little-death that brings total obliteration. I will face my footnotes.
+[^1]: Footnotes are the mind killer. Footnotes are the little-death
+    that brings total obliteration. I will face my footnotes.
 
 [^2]: Here is the 2nd footnote.
 
@@ -74,7 +86,7 @@ to import images:
 
 ## Estimation output embedding
 
-**latex input command for estimation output** `input{texfile.tex}`
+**latex input command for estimation output** `\input{texfile.tex}`
 
 \vspace{5mm}
 \input{table4d.tex}
