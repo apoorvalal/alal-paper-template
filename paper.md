@@ -78,7 +78,7 @@ isn't indented.
 to import images:
 `![image](luminosity_grid.png "Figure caption")`
 
-![image](luminosity_grid.png "Figure caption")
+![image](Figs/luminosity_grid.png "Figure caption")
 
 \newpage
 
@@ -89,7 +89,7 @@ to import images:
 **latex input command for estimation output** `\input{texfile.tex}`
 
 \vspace{5mm}
-\input{table4d.tex}
+\input{Tables/table4d.tex}
 \vspace{5mm}
 
 blah blah blah

@@ -3,7 +3,7 @@
 ## Apoorva Lal
 
 + paper.md is language agnostic
-+ article-skeleton.Rmd uses Rmarkdown and a custome template `lal-paper-template.tex` 
++ rmd-paper.Rmd uses Rmarkdown and a custome template `lal-paper-template.tex` 
   * forked from Steve Miller's [template](https://github.com/svmiller/svm-r-markdown-templates), which implements nifty features such as hyperlinks to footnotes and citations 
   * added option to have separate title page `septitle` in yaml boilerplate
   * added option to centre-align title `titlecentre` in yaml boilerplate
