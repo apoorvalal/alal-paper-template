@@ -15,7 +15,7 @@ abstract: "abstract goes here"
 keywords: "JEL keywords"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
-fontfamily: mathpazo
+fontfamily: charter
 fontsize: 12pt
 spacing: double
 toc: true
@@ -68,6 +68,8 @@ sessionInfo()
 
 # Introduction
 
+Main question: What is the average air speed velocity of a laden swallow?
+
 @Deatonanalysishouseholdsurveys1997
 
 The quick brown fox jumped over the lazy dog^[but the dog's laziness
@@ -112,8 +114,8 @@ trend_t + \epsilon_{ict}
 
 # Data
 
-## Make plot in document
-```{r, fig.cap="A scatterplot"}
+## Make plots in document
+```{r, fig.cap="Made here"}
 #%%
 ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point()
@@ -122,8 +124,8 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
 
 \newpage
 
-## Embedded plot
-![Luminosity Trends](Figs/luminosity_grid.png)
+## Embedded plots
+![Made somewhere else](Figs/luminosity_grid.png)
 
 \newpage
 
@@ -145,7 +147,7 @@ lm1 = lm(hwy ~ cyl + factor(class), data=mpg)
 stargazer(lm1, header=F, type='latex')
 ```
 
-## Input standalone latex table
+## Embed standalone latex table
 
 \vspace{5mm}
 \input{Tables/table4d.tex}

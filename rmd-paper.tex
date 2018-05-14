@@ -1,7 +1,7 @@
 \documentclass[12pt,]{article}
 \usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
 \newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
-\usepackage[]{mathpazo}
+\usepackage[]{charter}
 
 
 \usepackage[T1]{fontenc}
@@ -280,21 +280,27 @@
 \newpage
 
 
-\noindent \doublespacing \section{Introduction}\label{introduction}
+\noindent \doublespacing \hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+Main question: What is the average air speed velocity of a laden
+swallow?
 
 \textcite{Deatonanalysishouseholdsurveys1997}
 
 The quick brown fox jumped over the lazy dog\footnote{but the dog's
   laziness is heavily debated}.
 
-\section{Model}\label{model}
+\hypertarget{model}{%
+\section{Model}\label{model}}
 
 \begin{align*}
 \maximise_{c_t,k_{t+1}} &  \sum_{t=1}^{\infty} \beta^t u(c_t)  \\
   s.t. & \enspace c_{t} + k_{t+1} \leq f(k_t) + (1-\delta)k_t
 \end{align*}
 
-\section{Estimation Framework}\label{estimation-framework}
+\hypertarget{estimation-framework}{%
+\section{Estimation Framework}\label{estimation-framework}}
 
 \begin{align*}
 \text{outcome}_{ict} = \alpha_i & + \sum_{k=0}^2 \beta_{t-k}^p
@@ -304,31 +310,36 @@ PPI_{ict-k} + \gamma_{ct} + \epsilon_{ict} \\
 trend_t + \epsilon_{ict}
 \end{align*}
 
-\section{Data}\label{data}
+\hypertarget{data}{%
+\section{Data}\label{data}}
 
-\subsection{Make plot in document}\label{make-plot-in-document}
+\hypertarget{make-plots-in-document}{%
+\subsection{Make plots in document}\label{make-plots-in-document}}
 
 \begin{figure}
 \centering
 \includegraphics{Figs/unnamed-chunk-2-1.pdf}
-\caption{A scatterplot}
+\caption{Made here}
 \end{figure}
 
 \newpage
 
-\subsection{Embedded plot}\label{embedded-plot}
+\hypertarget{embedded-plots}{%
+\subsection{Embedded plots}\label{embedded-plots}}
 
 \begin{figure}
 \centering
 \includegraphics{Figs/luminosity_grid.png}
-\caption{Luminosity Trends}
+\caption{Made somewhere else}
 \end{figure}
 
 \newpage
 
-\section{Results}\label{results}
+\hypertarget{results}{%
+\section{Results}\label{results}}
 
-\subsection{Embed stargazer output}\label{embed-stargazer-output}
+\hypertarget{embed-stargazer-output}{%
+\subsection{Embed stargazer output}\label{embed-stargazer-output}}
 
 \begin{table}[!htbp] \centering 
   \caption{} 
@@ -361,7 +372,7 @@ trend_t + \epsilon_{ict}
  factor(class)suv & $-$8.410$^{***}$ \\ 
   & (1.240) \\ 
   & \\ 
- Constant & 38.278$^{***}$ \\ 
+ Constant & 38.280$^{***}$ \\ 
   & (1.639) \\ 
   & \\ 
 \hline \\[-1.8ex] 
@@ -369,23 +380,28 @@ Observations & 234 \\
 R$^{2}$ & 0.808 \\ 
 Adjusted R$^{2}$ & 0.802 \\ 
 Residual Std. Error & 2.649 (df = 226) \\ 
-F Statistic & 135.916$^{***}$ (df = 7; 226) \\ 
+F Statistic & 135.900$^{***}$ (df = 7; 226) \\ 
 \hline 
 \hline \\[-1.8ex] 
 \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
 \end{tabular} 
 \end{table}
 
-\subsection{Input standalone latex
-table}\label{input-standalone-latex-table}
+\hypertarget{embed-standalone-latex-table}{%
+\subsection{Embed standalone latex
+table}\label{embed-standalone-latex-table}}
 
-\vspace{5mm} \input{Tables/table4d.tex} \vspace{5mm}
+\vspace{5mm}
+\input{Tables/table4d.tex}
+\vspace{5mm}
 
-\section{Conclusion}\label{conclusion}
+\hypertarget{conclusion}{%
+\section{Conclusion}\label{conclusion}}
 
 Something significant
 
-\section{Appendix}\label{appendix}
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
 
 
 
