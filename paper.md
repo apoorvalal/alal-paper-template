@@ -12,8 +12,8 @@ indent: true
 # toc: true
 numbersections: true
 documentclass: article
-bibliography: "C:/Users/alal/Dropbox (Personal)/MyLibrary.bib"
-csl: "C:/Users/alal/.csl/econometrica.csl"
+# bibliography: "C:/Users/alal/Dropbox (Personal)/MyLibrary.bib"
+bibliography: /home/alal/Dropbox/MyLibrary.bib
 header-includes:
     - \usepackage{fancyhdr}
     - \usepackage{booktabs}
