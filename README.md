@@ -1,4 +1,4 @@
-﻿# (r)markdown paper template + working directory for empirical papers 
+﻿# (r)markdown paper template + working directory structure for empirical papers 
 
 ## Apoorva Lal
 
@@ -17,3 +17,22 @@ library(knitr); knitr::purl('file.Rmd')
 ```
 
 Includes placeholder directories for code, data, figures, and tables.
+
+# Configuration in bash
+
+Define a function in `~/.aliases` as follows
+
+```bash
+# paper template
+paperstruct() {
+    git clone git@github.com:apoorvalal/alal-markdown-paper-template.git $1
+    cd $1 
+    rm .git -rf
+    mv rmd-paper.Rmd $1.Rmd 
+    mv rmd-paper.tex $1.tex
+    echo "Initialise a new git repo for this; goto bitbucket"
+}
+alias papeR='paperstruct'
+```
+
+then clone by simply doing `papeR <papertitle>`
