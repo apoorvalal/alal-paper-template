@@ -5,11 +5,14 @@ thanks: 'PhD Candidate, Stanford University. Acknowledgements go here'
 date: Date
 abstract: 'This paper does amazing things'
 geometry: "margin=1in"
-output: pdf_document
+output:
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
 fontsize: 12pt
-fontfamily: mathpazo
+fontfamily: libertine
 indent: true
-# toc: true
+toc: true
 numbersections: true
 documentclass: article
 # bibliography: "C:/Users/alal/Dropbox (Personal)/MyLibrary.bib"

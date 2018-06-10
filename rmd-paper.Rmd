@@ -15,7 +15,7 @@ abstract: "abstract goes here"
 keywords: "JEL keywords"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
-fontfamily: charter
+fontfamily: libertine
 fontsize: 12pt
 spacing: double
 toc: true
