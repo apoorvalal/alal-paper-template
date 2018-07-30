@@ -1,55 +1,34 @@
 ---
-title: "Pandoc Markdown Paper Shell"
-author: 'Apoorva Lal'
-thanks: 'PhD Candidate, Stanford University. Acknowledgements go here'
-date: Date
+title: "Pandoc Markdown Document Shell"
+subtitle: "A Subtitle"
+author:  'Apoorva Lal'
+# documentclass: amsart
+# titlefooter: true
+address: 'Stanford University, CA'
+email:   'apoorval@stanford.edu'
+thanks: 'thanks'
+date: \today
 abstract: 'This paper does amazing things'
 geometry: "margin=1in"
-output:
-  pdf_document:
-    keep_tex: true
-    fig_caption: true
+output: pdf_document
 fontsize: 12pt
-fontfamily: libertine
+colorlinks: true
 indent: true
 toc: true
+xetex: true
+mathspec: true
 numbersections: true
-documentclass: article
-# bibliography: "C:/Users/alal/Dropbox (Personal)/MyLibrary.bib"
 bibliography: /home/alal/Dropbox/MyLibrary.bib
+csl: econometrica.csl
 header-includes:
-    - \usepackage{fancyhdr}
-    - \usepackage{booktabs}
-    - \pagestyle{fancy}
-    - \rhead{Title}
-    - \lhead[CO,LE]{Apoorva Lal}
+    - '\usepackage{lipsum}' 
 ---
 
+# Introduction
+
+@Deatonanalysishouseholdsurveys1997
+
 \newpage
-
-# Overview
-
-Introduce paper
-
-# Pandoc incantations
-
-configure sublime build systems for these so that `ctrl+b` builds the
-file
-
-## Markdown to pdf
-
-`pandoc -o $file_base_name.pdf -s $paper.md --filter=pandoc-citeproc`
-
-## Markdown to tex (to fiddle with tex settings / packages)
-
-`pandoc -o $file_base_name.tex -s $paper.md --filter=pandoc-citeproc`
-
-# Pandoc Markdown incantations
-
-## Citations
-
-cite a paper (@ManningHealthinsurancedemand1987) by using `(@citekey)
-syntax`.
 
 ## Footnotes
 
@@ -63,44 +42,29 @@ footnotes are easier to handle^[like so].
 
 [^longnote]: Here's one with multiple blocks.
 
-    Subsequent paragraphs are indented to show that they
-belong to the previous footnote.
+# Model
 
-        { some.code }
+$$
+\maximise_{x} \int_{-\infty}^{\infty} \beta^t U(c_t) dt
+$$
 
-    The whole paragraph can be indented, or just the first
-    line.  In this way, multi-paragraph footnotes work like
-    multi-paragraph list items.
+# Data
 
-This paragraph won't be part of the note, because it
-isn't indented.
+<!-- \lipsum[1] -->
 
-
-## Images
-
-to import images:
-`![image](luminosity_grid.png "Figure caption")`
-
-![image](Figs/luminosity_grid.png "Figure caption")
+# Results
 
 \newpage
 
-# Empirics
 
-## Estimation output embedding
+\appendix
 
-**latex input command for estimation output** `\input{texfile.tex}`
+$$
+Y_{i} = X_i'\beta + \epsilon_i
+$$
 
-\vspace{5mm}
-\input{Tables/table4d.tex}
-\vspace{5mm}
+\newpage 
 
-blah blah blah
+\textsc{Bibliography}
 
-# Conclusion
 
-blah blah
-
-\newpage
-
-# Bibliography

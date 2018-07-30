@@ -1,10 +1,17 @@
-\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{article}
+\documentclass[$if(fontsize)$$fontsize$,$endif$$if(lang)$$babel-lang$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
 \usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
 \newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
 $if(fontfamily)$
 \usepackage[$fontfamilyoptions$]{$fontfamily$}
 $else$
 \usepackage{lmodern}
+$endif$
+
+$if(titlefooter)$
+  \usepackage[foot]{amsaddr}
+  \address{$address$}
+  \email{$email$}
+  \thanks{$thanks$}
 $endif$
 
 
@@ -32,7 +39,7 @@ $if(appendix)$
 $endif$
 
 
-\usepackage[sc]{titlesec}
+
 
 $if(listings)$
 \usepackage{listings}
@@ -74,7 +81,7 @@ $if(anonymous)$$else$\author{$for(author)$\Large $author.name$\vspace{0.05in} \n
 \date{}
 
 \usepackage[T1]{fontenc}
-\usepackage[sc]{titlesec}
+
 
 
 $if(natbib)$
@@ -94,6 +101,8 @@ $if(listings)$
 \usepackage{listings}
 $endif$
 
+\usepackage[sc]{titlesec}
+% \titleformat{\section}[block]{\Large\scseries\filcenter}{}{1em}{}
 
 \newtheorem{hypothesis}{Hypothesis}
 \usepackage{setspace}
@@ -104,8 +113,10 @@ $endif$
   \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
               xetex]{hyperref}
+  \usepackage{pdflscape}
 \else
   \PassOptionsToPackage{hyphens}{url}\usepackage[unicode=true]{hyperref}
+  \usepackage[pdftex]{lscape}           % for landscaped tables
 \fi
 }
 
@@ -118,12 +129,12 @@ $endif$
 \hypersetup{breaklinks=true,
             bookmarks=true,
             pdfauthor={$if(anonymous)$$else$$for(author)$$author.name$ ($author.affiliation$)$sep$ and $endfor$$endif$},
-             pdfkeywords = {$if(keywords)$$keywords$$endif$},
+            pdfkeywords = {$if(keywords)$$keywords$$endif$},
             pdftitle={$title$$if(subtitle)$: $subtitle$$endif$},
             colorlinks=true,
-            citecolor=$if(citecolor)$$citecolor$$else$blue$endif$,
+            citecolor=$if(citecolor)$$citecolor$$else$red$endif$,
             urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
-            linkcolor=$if(linkcolor)$$linkcolor$$else$magenta$endif$,
+            linkcolor=$if(linkcolor)$$linkcolor$$else$blue$endif$,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
 
@@ -142,7 +153,9 @@ $if(endnotes)$
 \let\footnote=\endnote
 $endif$
 
-\usepackage{amsfonts, amsmath, amssymb, amsthm, mathtools, enumitem, fancyhdr, booktabs}
+
+\usepackage{amsfonts, amsmath, amssymb, amsthm,
+mathtools, enumitem, fancyhdr, booktabs}
 
 $if(fancy-header)$
   \pagestyle{fancy}
@@ -280,6 +293,14 @@ $else$
 \makeatother
 $endif$
 
+$if(titlefooter)$
+  \usepackage[foot]{amsaddr}
+  \address{$address$}
+  % \email{$email$}
+  \email{$email$}
+  \thanks{$thanks$}
+$endif$
+
 
 \begin{document}
 
@@ -287,8 +308,6 @@ $endif$
 %$if(appendix)$
 %\renewcommand*{\thepage}{$appendixletter$--\arabic{page}}
 %$endif$
-
-
 
 
 $if(title)$
@@ -309,8 +328,8 @@ $if(anonymous)$\hfill $else$$for(author)$\textbf{$author.name$} \hskip 15pt \emp
 \end{center}
 $else$
 {
-   \vskip 13.5pt\relax \normalsize\fontsize{14}{14}
-$if(anonymous)$\hfill $else$$for(author)$\textbf{$author.name$} \hskip 15pt \emph{\small $author.affiliation$}  $sep$ \par $endfor$ $endif$
+  \vskip 13.5pt\relax \normalsize\fontsize{14}{14}
+  $if(anonymous)$\hfill $else$$for(author)$\textbf{$author.name$} \hskip 15pt \emph{\small $author.affiliation$}  $sep$ \par $endfor$ $endif$
 }
 $endif$
 }
@@ -387,6 +406,7 @@ $endif$
 $endif$
 $endif$
 $if(biblatex)$
+\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
 \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
 
 $endif$

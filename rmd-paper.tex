@@ -1,7 +1,8 @@
 \documentclass[12pt,]{article}
 \usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
 \newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
-\usepackage[]{libertine}
+\usepackage{lmodern}
+
 
 
 \usepackage[T1]{fontenc}
@@ -24,7 +25,7 @@
 
 
 
-\usepackage[sc]{titlesec}
+
 
 
 \usepackage{graphicx,grffile}
@@ -37,19 +38,19 @@
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-\title{Paper Title : Subtitle \thanks{Acknowledgements here. \textbf{Current version}: June 10, 2018;
+\title{Paper Title : Subtitle \thanks{Acknowledgements here. ~\textbf{Current version}: July 30, 2018;
 \textbf{Corresponding author}:
 \href{mailto:apoorval@stanford.edu}{\nolinkurl{apoorval@stanford.edu}}.}  }
 
 
 
-\author{\Large Apoorva Lal\vspace{0.05in} \newline\normalsize\emph{Stanford University}  }
+\author{\Large Apoorva Lal\vspace{0.05in} \newline\normalsize\emph{Stanford}   \and \Large Karen Seto\vspace{0.05in} \newline\normalsize\emph{Yale}  }
 
 
 \date{}
 
 \usepackage[T1]{fontenc}
-\usepackage[sc]{titlesec}
+
 
 
 
@@ -57,6 +58,8 @@
 
 \addbibresource{/home/alal/Dropbox/MyLibrary.bib}
 
+\usepackage[sc]{titlesec}
+% \titleformat{\section}[block]{\Large\scseries\filcenter}{}{1em}{}
 
 \newtheorem{hypothesis}{Hypothesis}
 \usepackage{setspace}
@@ -67,8 +70,10 @@
   \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
               xetex]{hyperref}
+  \usepackage{pdflscape}
 \else
   \PassOptionsToPackage{hyphens}{url}\usepackage[unicode=true]{hyperref}
+  \usepackage[pdftex]{lscape}           % for landscaped tables
 \fi
 }
 
@@ -80,13 +85,13 @@
 \makeatother
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={Apoorva Lal (Stanford University)},
-             pdfkeywords = {JEL keywords},
+            pdfauthor={Apoorva Lal (Stanford) and Karen Seto (Yale)},
+            pdfkeywords = {JEL keywords},
             pdftitle={Paper Title : Subtitle},
             colorlinks=true,
-            citecolor=blue,
+            citecolor=red,
             urlcolor=blue,
-            linkcolor=magenta,
+            linkcolor=blue,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
 
@@ -97,7 +102,9 @@
 
 
 
-\usepackage{amsfonts, amsmath, amssymb, amsthm, mathtools, enumitem, fancyhdr, booktabs}
+
+\usepackage{amsfonts, amsmath, amssymb, amsthm,
+mathtools, enumitem, fancyhdr, booktabs}
 
   \pagestyle{fancy}
   \lhead[CO,LE]{Title (shortened if necessary)}
@@ -215,21 +222,17 @@
 \makeatletter
 \def\@maketitle{%
   \newpage
-  \begin{center}%
   \let \footnote \thanks
-    {\fontsize{24}{24}\selectfont\raggedright  \@title}
-  \end{center}
+    {\fontsize{22}{22}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}
 }
-%\fi
 \makeatother
+
 
 
 \begin{document}
 
 % \pagenumbering{arabic}% resets `page` counter to 1
 %
-
-
 
 \maketitle
 
@@ -239,12 +242,10 @@
 \maketitle  % title \par
 }
 
-\begin{center}
 {
-   \vskip 13.5pt\relax \normalsize\fontsize{14}{14}
-\textbf{Apoorva Lal} \hskip 15pt \emph{\small Stanford University}   
+  \vskip 13.5pt\relax \normalsize\fontsize{14}{14}
+  \textbf{Apoorva Lal} \hskip 15pt \emph{\small Stanford}   \par \textbf{Karen Seto} \hskip 15pt \emph{\small Yale}   
 }
-\end{center}
 }
 
 
@@ -271,17 +272,10 @@
 
 \vskip 6.5pt
 
-{
-\hypersetup{linkcolor=black}
-\setcounter{tocdepth}{3}
-\tableofcontents
-}
-
-\newpage
 
 
-\noindent \doublespacing \hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+
+\noindent \doublespacing \section{Introduction}\label{introduction}
 
 Main question: What is the average air speed velocity of a laden
 swallow?
@@ -291,16 +285,14 @@ swallow?
 The quick brown fox jumped over the lazy dog\footnote{but the dog's
   laziness is heavily debated}.
 
-\hypertarget{model}{%
-\section{Model}\label{model}}
+\section{Model}\label{model}
 
 \begin{align*}
 \maximise_{c_t,k_{t+1}} &  \sum_{t=1}^{\infty} \beta^t u(c_t)  \\
   s.t. & \enspace c_{t} + k_{t+1} \leq f(k_t) + (1-\delta)k_t
 \end{align*}
 
-\hypertarget{estimation-framework}{%
-\section{Estimation Framework}\label{estimation-framework}}
+\section{Estimation Framework}\label{estimation-framework}
 
 \begin{align*}
 \text{outcome}_{ict} = \alpha_i & + \sum_{k=0}^2 \beta_{t-k}^p
@@ -310,11 +302,9 @@ PPI_{ict-k} + \gamma_{ct} + \epsilon_{ict} \\
 trend_t + \epsilon_{ict}
 \end{align*}
 
-\hypertarget{data}{%
-\section{Data}\label{data}}
+\section{Data}\label{data}
 
-\hypertarget{make-plots-in-document}{%
-\subsection{Make plots in document}\label{make-plots-in-document}}
+\subsection{Make plots in document}\label{make-plots-in-document}
 
 \begin{figure}
 \centering
@@ -324,8 +314,7 @@ trend_t + \epsilon_{ict}
 
 \newpage
 
-\hypertarget{embedded-plots}{%
-\subsection{Embedded plots}\label{embedded-plots}}
+\subsection{Embedded plots}\label{embedded-plots}
 
 \begin{figure}
 \centering
@@ -335,11 +324,9 @@ trend_t + \epsilon_{ict}
 
 \newpage
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Results}\label{results}
 
-\hypertarget{embed-stargazer-output}{%
-\subsection{Embed stargazer output}\label{embed-stargazer-output}}
+\subsection{Embed stargazer output}\label{embed-stargazer-output}
 
 \begin{table}[!htbp] \centering 
   \caption{} 
@@ -387,27 +374,23 @@ F Statistic & 135.900$^{***}$ (df = 7; 226) \\
 \end{tabular} 
 \end{table}
 
-\hypertarget{embed-standalone-latex-table}{%
 \subsection{Embed standalone latex
-table}\label{embed-standalone-latex-table}}
+table}\label{embed-standalone-latex-table}
 
-\vspace{5mm}
-\input{Tables/table4d.tex}
-\vspace{5mm}
+\vspace{5mm} \input{Tables/table4d.tex} \vspace{5mm}
 
-\hypertarget{conclusion}{%
-\section{Conclusion}\label{conclusion}}
+\section{Conclusion}\label{conclusion}
 
 Something significant
 
-\hypertarget{appendix}{%
-\section{Appendix}\label{appendix}}
+\section{Appendix}\label{appendix}
 
 
 
 
 \newpage
 \singlespacing
+\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
 \printbibliography[title=Bibliography]
 
 \end{document}
