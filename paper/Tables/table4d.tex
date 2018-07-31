@@ -1,0 +1,26 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                    &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                    &\multicolumn{1}{c}{Linear}&\multicolumn{1}{c}{Quadratic}&\multicolumn{1}{c}{Spline}&\multicolumn{1}{c}{Interaction}\\
+                    &        b/se       &        b/se       &        b/se       &        b/se       \\
+\midrule
+Population Growth   &       0.054\sym{*}&       0.180\sym{*}&                   &       0.085\sym{*}\\
+                    &    (0.0017)       &    (0.0043)       &                   &    (0.0053)       \\
+Population Growth Squared&                   &      -0.053\sym{*}&                   &                   \\
+                    &                   &    (0.0017)       &                   &                   \\
+pop\_growth: below median&                   &                   &       0.097\sym{*}&                   \\
+                    &                   &                   &    (0.0023)       &                   \\
+pop\_growth: above median&                   &                   &      -0.071\sym{*}&                   \\
+                    &                   &                   &    (0.0049)       &                   \\
+above\_median=1 $\times$ Population Growth&                   &                   &                   &      -0.025\sym{*}\\
+                    &                   &                   &                   &    (0.0042)       \\
+Constant            &      -0.045\sym{*}&      -0.096\sym{*}&      -0.072\sym{*}&      -0.054\sym{*}\\
+                    &    (0.0016)       &    (0.0023)       &    (0.0019)       &    (0.0023)       \\
+\midrule
+Observations        &     1182563       &     1182563       &     1182563       &     1182563       \\
+\(R^{2}\)           &       0.001       &       0.002       &       0.002       &       0.001       \\
+\bottomrule
+\end{tabular}
+}
