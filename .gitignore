@@ -1,0 +1,16 @@
+*.dta
+*.ipynb_checkpoints
+*.log
+*.bbl
+*.bcf
+*.fls
+*.bcf
+*.run.xml
+**/*_cache/*
+*.shp
+*.shx
+*.qpj
+*.dbf
+*.RData
+*.Rds
+*.tab

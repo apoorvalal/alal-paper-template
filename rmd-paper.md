@@ -5,14 +5,12 @@ output:
     citation_package: biblatex
     latex_engine: xelatex
     fig_caption: true
-    template: ~/Templates/boilerplate/lal-paper-template.tex
+    template: lal-paper-template.tex
 title: "Paper Title : Subtitle"
-thanks: "Acknowledgements here. **Current version**: `r format(Sys.time(), '%B %d, %Y')`; **Corresponding author**: apoorval@stanford.edu."
+thanks: "Acknowledgements here. \n **Current version**: `r format(Sys.time(), '%B %d, %Y')`; **Corresponding author**: apoorval@stanford.edu."
 author:
 - name: Apoorva Lal
   affiliation: Stanford
-- name: Karen Seto
-  affiliation: Yale
 abstract: "abstract goes here"
 keywords: "JEL keywords"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
@@ -20,9 +18,9 @@ geometry: margin=1in
 fontsize: 12pt
 spacing: double
 toc: false
-septitle: false
-titlecentre: false
-fancy-header: 'Title (shortened if necessary)'
+septitle: true
+titlecentre: true
+# fancy-header: 'Title (shortened if necessary)'
 bibliography: /home/alal/Dropbox/MyLibrary.bib
 endnote: no
 biblio-style: authoryear
@@ -30,9 +28,7 @@ biblio-style: authoryear
 
 ```{r global_options, include=FALSE}
 knitr::opts_chunk$set(fig.width=12, fig.height=8, fig.path='Figs/',
-                      cache=T,
-                      echo=FALSE, warning=FALSE, message=FALSE
-                      )
+                      echo=FALSE, warning=FALSE, message=FALSE)
 root = "working/directory/"
 # setwd(root)
 # opts_knit$set(root.dir = root)
