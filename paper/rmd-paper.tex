@@ -4,7 +4,6 @@
 \usepackage{lmodern}
 
 
-
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{caption}
@@ -25,7 +24,7 @@
 
 
 
-
+\usepackage[sc]{titlesec}
 
 
 \usepackage{graphicx,grffile}
@@ -38,19 +37,19 @@
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
-\title{Paper Title : Subtitle \thanks{Acknowledgements here. \textbf{Current version}: July 30, 2018;
+\title{Paper Title : Subtitle \thanks{Acknowledgements here. \textbf{Current version}: September 09, 2018;
 \textbf{Corresponding author}:
 \href{mailto:apoorval@stanford.edu}{\nolinkurl{apoorval@stanford.edu}}.}  }
 
 
 
-\author{\Large Apoorva Lal\vspace{0.05in} \newline\normalsize\emph{Stanford}   \and \Large Karen Seto\vspace{0.05in} \newline\normalsize\emph{Yale}  }
+\author{\Large Apoorva Lal\vspace{0.05in} \newline\normalsize\emph{Stanford}  }
 
 
 \date{}
 
 \usepackage[T1]{fontenc}
-
+\usepackage[sc]{titlesec}
 
 
 
@@ -58,8 +57,7 @@
 
 \addbibresource{/home/alal/Dropbox/MyLibrary.bib}
 
-\usepackage[sc]{titlesec}
-% \titleformat{\section}[block]{\Large\scseries\filcenter}{}{1em}{}
+
 
 \newtheorem{hypothesis}{Hypothesis}
 \usepackage{setspace}
@@ -70,10 +68,8 @@
   \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
               xetex]{hyperref}
-  \usepackage{pdflscape}
 \else
   \PassOptionsToPackage{hyphens}{url}\usepackage[unicode=true]{hyperref}
-  \usepackage[pdftex]{lscape}           % for landscaped tables
 \fi
 }
 
@@ -85,13 +81,13 @@
 \makeatother
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={Apoorva Lal (Stanford) and Karen Seto (Yale)},
-            pdfkeywords = {JEL keywords},
+            pdfauthor={Apoorva Lal (Stanford)},
+             pdfkeywords = {JEL keywords},
             pdftitle={Paper Title : Subtitle},
             colorlinks=true,
-            citecolor=red,
+            citecolor=blue,
             urlcolor=blue,
-            linkcolor=blue,
+            linkcolor=magenta,
             pdfborder={0 0 0}}
 \urlstyle{same}  % don't use monospace font for urls
 
@@ -102,9 +98,8 @@
 
 
 
-
-\usepackage{amsfonts, amsmath, amssymb, amsthm,
-mathtools, enumitem, fancyhdr, booktabs}
+\usepackage{amsfonts, amsmath, amssymb, amsthm, mathtools, enumitem,
+fancyhdr, booktabs}
 
   \pagestyle{fancy}
   \lhead[CO,LE]{Title (shortened if necessary)}
@@ -228,11 +223,12 @@ mathtools, enumitem, fancyhdr, booktabs}
 \makeatother
 
 
-
 \begin{document}
 
 % \pagenumbering{arabic}% resets `page` counter to 1
 %
+
+
 
 \maketitle
 
@@ -243,8 +239,8 @@ mathtools, enumitem, fancyhdr, booktabs}
 }
 
 {
-  \vskip 13.5pt\relax \normalsize\fontsize{14}{14}
-  \textbf{Apoorva Lal} \hskip 15pt \emph{\small Stanford}   \par \textbf{Karen Seto} \hskip 15pt \emph{\small Yale}   
+   \vskip 13.5pt\relax \normalsize\fontsize{14}{14}
+\textbf{Apoorva Lal} \hskip 15pt \emph{\small Stanford}   
 }
 }
 
@@ -282,8 +278,7 @@ swallow?
 
 \textcite{Deatonanalysishouseholdsurveys1997}
 
-The quick brown fox jumped over the lazy dog\footnote{but the dog's
-  laziness is heavily debated}.
+The quick brown fox jumped over the lazy dog.
 
 \section{Model}\label{model}
 

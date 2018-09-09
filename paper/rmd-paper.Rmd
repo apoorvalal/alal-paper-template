@@ -11,8 +11,6 @@ thanks: "Acknowledgements here. **Current version**: `r format(Sys.time(), '%B %
 author:
 - name: Apoorva Lal
   affiliation: Stanford
-- name: Karen Seto
-  affiliation: Yale
 abstract: "abstract goes here"
 keywords: "JEL keywords"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
@@ -75,8 +73,7 @@ Main question: What is the average air speed velocity of a laden swallow?
 
 @Deatonanalysishouseholdsurveys1997
 
-The quick brown fox jumped over the lazy dog^[but the dog's laziness
-is heavily debated].
+The quick brown fox jumped over the lazy dog.
 
 
 <!-- /*
